@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  vault:
+    image:  vault:1.13.3
+    container_name: vault
+    cap_add:
+      - IPC_LOCK
+    ports:
+      - "8200:8200"
+    volumes:
+      - ./config:/vault/config
+    environment:
+      VAULT_ADDR: http://0.0.0.0:8200
+      VAULT_API_ADDR: http://0.0.0.0:8200
+    command: vault server -dev -dev-listen-address="0.0.0.0:8200" -dev-root-token-id="root"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "3"
+        max-size: "500m"
