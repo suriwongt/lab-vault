@@ -2,7 +2,9 @@
 ```
     docker-compose up -d
     docker-compose down --rmi -all
+
 ```
+install  https://developer.hashicorp.com/vault/install
 
 2. Unseal Vault
 ```bash
