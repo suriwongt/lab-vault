@@ -17,7 +17,7 @@ func main() {
 		fmt.Print(err.Error())
 	}
 
-	username := "xxxxx"
+	username := "read"
 	password := "xxxxxxxxx"
 
 	// Authenticate using the userpass method

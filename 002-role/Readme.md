@@ -23,7 +23,7 @@ openssl rand -base64 24 | head -c 16; echo
 
 5. Create USER
 ```bash
-vault write auth/userpass/users/<YOUR_USER_NAME> policies="<POLICY>" password="<YOUR-PASSWORD>"
+vault write auth/userpass/users/admin policies="admin" password="<YOUR-PASSWORD>"
 ```
 
 6. Login 
@@ -51,4 +51,14 @@ openssl rand -base64 24 | head -c 24; echo
 ```bash
 vault kv put <KV_PATH> access_token=<YOUR_ACCESS_TOKEN_VALUE>
 vault kv put secret/test/example access_token=yX4CGae2mDGxxCjE5kp2Bz3R
+```
+
+11. Generate some 16 digits password
+```bash
+openssl rand -base64 24 | head -c 16; echo
+```
+
+12. Create USER Read
+```bash
+vault write auth/userpass/users/read policies="read" password="<YOUR-PASSWORD>"
 ```
